@@ -36,9 +36,11 @@ container.addEventListener("click", e => {
             if (e.path[3].id == "bag") readdBag.style.display = "inline";
             else if (e.path[3].id == "shoe") readdShoe.style.display = "inline";
             else readdClock.style.display = "inline";
-             
-
-        }   
+        }
+        else if(e.target.parentElement.children[1].innerText == "-1"){
+            alert("please add item(s)")
+            e.target.parentElement.children[1].innerText = "0"
+        } 
         productTotal.innerText = (+quantity.innerText * +price).toFixed(2)
         footerPart()
     }
